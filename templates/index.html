@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Clothing Recommender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Clothing Recommender</h1>
+    <div>
+        <input type="text" id="location" placeholder="Enter location">
+        <button onclick="getRecommendation()">Get Recommendation</button>
+    </div>
+    
+    <div id="result" class="result">
+        <h2>Current Weather</h2>
+        <p id="weather"></p>
+        <h2>Clothing Recommendation</h2>
+        <p id="recommendation"></p>
+    </div>
+
+    <script>
+        async function getRecommendation() {
+            const location = document.getElementById('location').value;
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                const response = await fetch('/get_recommendation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ location })
+                });
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    alert(data.error);
+                    return;
+                }
+                
+                document.getElementById('weather').innerHTML = `
+                    Temperature: ${data.weather.temperature}°C<br>
+                    Condition: ${data.weather.condition}<br>
+                    Humidity: ${data.weather.humidity}%<br>
+                    Wind: ${data.weather.wind_kph} kph
+                `;
+                
+                document.getElementById('recommendation').textContent = data.recommendation;
+                resultDiv.style.display = 'block';
+                
+            } catch (error) {
+                alert('Error getting recommendation');
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html> 
