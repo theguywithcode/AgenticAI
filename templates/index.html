@@ -16,6 +16,27 @@
             border-radius: 5px;
             display: none;
         }
+
+        /* New styles for weather animations */
+        .sunny {
+            animation: sunAnimation 2s infinite;
+        }
+
+        .rainy {
+            animation: rainAnimation 2s infinite;
+        }
+
+        @keyframes sunAnimation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes rainAnimation {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
     </style>
 </head>
 <body>
@@ -36,6 +57,7 @@
         async function getRecommendation() {
             const location = document.getElementById('location').value;
             const resultDiv = document.getElementById('result');
+            const weatherElement = document.getElementById('weather');
             
             try {
                 const response = await fetch('/get_recommendation', {
@@ -53,7 +75,17 @@
                     return;
                 }
                 
-                document.getElementById('weather').innerHTML = `
+                // Set weather animation based on condition
+                const condition = data.weather.condition.toLowerCase();
+                if (condition.includes('sunny')) {
+                    weatherElement.className = 'sunny';
+                } else if (condition.includes('rain')) {
+                    weatherElement.className = 'rainy';
+                } else {
+                    weatherElement.className = ''; // Reset for other conditions
+                }
+
+                weatherElement.innerHTML = `
                     Temperature: ${data.weather.temperature}°C<br>
                     Condition: ${data.weather.condition}<br>
                     Humidity: ${data.weather.humidity}%<br>
