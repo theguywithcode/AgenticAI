@@ -20,7 +20,7 @@ client_secret = os.getenv('CLIENT_SECRET')
 redirect_uri = os.getenv('REDIRECT_URI')
 
 # Weather API endpoint
-WEATHER_API_URL = "post"
+WEATHER_API_URL = "http://api.weatherapi.com/v1/current.json"
 
 # Initialize Gemini LLM (to be done after OAuth flow)
 llm = Gemini(
@@ -29,7 +29,7 @@ llm = Gemini(
     )
 clothing_prompt_template = """
 Given the following weather conditions, recommend appropriate clothing:
-Temperature: {temperature}°C
+Temperature: {temperature}Â°C
 Condition: {condition}
 Humidity: {humidity}%
 Wind: {wind_kph} kph
@@ -48,7 +48,7 @@ def get_recommendation():
 
     data = request.json
     location = data.get('location')
-
+    print(location)
     if not location:
         return jsonify({'error': 'Please provide a location'})
 
@@ -88,4 +88,4 @@ def get_recommendation():
 
 
 if __name__ == '__main__':
-    app.run(port=5000)  # Change host and port as needed
+    app.run(port=5000)
