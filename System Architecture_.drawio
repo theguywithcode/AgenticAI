@@ -1,0 +1,77 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="26.0.6">
+  <diagram name="Natural Language SQL Query System" id="gQEjxo4JEtS9gVXEo527">
+    <mxGraphModel dx="1195" dy="643" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-17" value="Client API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="360" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-18" value="FastAPI Application" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="120" y="160" width="600" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-19" value="FastAPI Endpoints" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="_6t1JQSuE_BxuYuDLF8q-18">
+          <mxGeometry x="240" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-20" value="Security Layer&#xa;(SecureQueryEngine)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="_6t1JQSuE_BxuYuDLF8q-18">
+          <mxGeometry x="240" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-21" value="Query Engine&#xa;(NLSQLTableQueryEngine)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="_6t1JQSuE_BxuYuDLF8q-18">
+          <mxGeometry x="225" y="280" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-22" value="Embeddings" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="_6t1JQSuE_BxuYuDLF8q-18">
+          <mxGeometry x="40" y="120" width="170" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-23" value="GeminiCustomEmbedding" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="_6t1JQSuE_BxuYuDLF8q-22">
+          <mxGeometry x="5" y="40" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-24" value="Gemini Model" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="_6t1JQSuE_BxuYuDLF8q-22">
+          <mxGeometry x="20" y="100" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-25" value="Database Layer" style="swimlane;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="_6t1JQSuE_BxuYuDLF8q-18">
+          <mxGeometry x="400" y="120" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-26" value="Read-Only Engine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="_6t1JQSuE_BxuYuDLF8q-25">
+          <mxGeometry x="20" y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-27" value="SQL Query Validator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="_6t1JQSuE_BxuYuDLF8q-25">
+          <mxGeometry x="20" y="100" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-28" value="Google Gemini API" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="120" y="600" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-29" value="SQLite Database" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="560" y="600" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-30" value="HTTP Request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="_6t1JQSuE_BxuYuDLF8q-17" target="_6t1JQSuE_BxuYuDLF8q-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-31" value="Validates Request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="_6t1JQSuE_BxuYuDLF8q-19" target="_6t1JQSuE_BxuYuDLF8q-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-32" value="Secured Query" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="_6t1JQSuE_BxuYuDLF8q-20" target="_6t1JQSuE_BxuYuDLF8q-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-33" value="Generate&#xa;Embeddings" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="_6t1JQSuE_BxuYuDLF8q-21" target="_6t1JQSuE_BxuYuDLF8q-23">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="340" y="475" />
+              <mxPoint x="340" y="405" />
+              <mxPoint x="335" y="405" />
+              <mxPoint x="335" y="345" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-34" value="API Calls" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="_6t1JQSuE_BxuYuDLF8q-24" target="_6t1JQSuE_BxuYuDLF8q-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-35" value="Database&#xa;Operations" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="_6t1JQSuE_BxuYuDLF8q-21" target="_6t1JQSuE_BxuYuDLF8q-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_6t1JQSuE_BxuYuDLF8q-36" value="Read&#xa;Operations" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="_6t1JQSuE_BxuYuDLF8q-26" target="_6t1JQSuE_BxuYuDLF8q-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
