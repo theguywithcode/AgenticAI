@@ -2,7 +2,7 @@ This is our LLM code for creating a conversational AI
 
 
 ## 🏗️  System Architecture 
-![System Arcitecture](./System Architecture.svg)
+![System Arcitecture](./System_Architecture.svg)
 
 
 
@@ -53,7 +53,8 @@ sequenceDiagram
     }
 
 
-      (⌐■_■)   < I code, therefore I am! >
+```
+(⌐■_■)   < I code, therefore I am! >
      ╭───────────────╮
     / theguywithcode  \
    |    /////\\\\\\    |
@@ -66,4 +67,5 @@ sequenceDiagram
      _//           \\_
     (__)           (__)
 
-    
+
+```
