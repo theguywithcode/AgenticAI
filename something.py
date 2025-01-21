@@ -72,10 +72,10 @@ class PropertyManager:
 
             # Create context with the properties data
             context = f"""
-            Given You are a property management assistant.
+            You are a property management assistant. Here are the properties:
             {json.dumps(self.properties_data, indent=2)}
 
-            Answer the following question
+            Answer the following question about these properties.
             Question: {query}
             """
 
