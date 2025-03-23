@@ -1,4 +1,4 @@
-##**🚀 Conversational AI - LLM Backend**
+## **🚀 Conversational AI - LLM Backend**
 
 This repository contains the backend for a Conversational AI system, built using FastAPI and Gemini LLM, with security layers, query processing, and embeddings for intelligent database interactions.
 
